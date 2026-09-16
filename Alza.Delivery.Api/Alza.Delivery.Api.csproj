@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>Alza</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Alza.Delivery.ApplicationLayer\Alza.Delivery.ApplicationLayer.csproj" />
+      <ProjectReference Include="..\Alza.Delivery.DomainLayer\Alza.Delivery.DomainLayer.csproj" />
+      <ProjectReference Include="..\Alza.Delivery.InfrastructureLayer\Alza.Delivery.InfrastructureLayer.csproj" />
+    </ItemGroup>
+
+</Project>
