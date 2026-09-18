@@ -6,8 +6,8 @@ Content-Type: application/json
 
 {
   "packages": [
-    { "weightKg": 2.5, "volumeM3": 0.03, "revenueCzk": 450 },
-    { "weightKg": 12, "volumeM3": 0.15, "revenueCzk": 1200 }
+    { "weight": 2.5, "volume": 0.03, "revenue": 450 },
+    { "weight": 12, "volume": 0.15, "revenue": 1200 }
   ]
 }
 
