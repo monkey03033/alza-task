@@ -8,13 +8,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Alza.Delivery.ApplicationLayer\Alza.Delivery.ApplicationLayer.csproj" />
       <ProjectReference Include="..\Alza.Delivery.DomainLayer\Alza.Delivery.DomainLayer.csproj" />
       <ProjectReference Include="..\Alza.Delivery.InfrastructureLayer\Alza.Delivery.InfrastructureLayer.csproj" />
+      <ProjectReference Include="..\Alza.Delivery.InterfaceLayer\Alza.Delivery.InterfaceLayer.csproj" />
     </ItemGroup>
 
 </Project>
