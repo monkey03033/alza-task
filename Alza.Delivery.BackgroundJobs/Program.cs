@@ -1,13 +1,21 @@
-namespace Alza.Delivery;
+namespace Alza.Delivery.BackgroundJobs;
 
-public class Program
+internal static class Program
 {
-    public static void Main(string[] args)
+    private static async Task Main(string[] args)
     {
-        var builder = Host.CreateApplicationBuilder(args);
-        builder.Services.AddHostedService<AlzaBoxVanAssignmentsJob>();
+        using var host = CreateHostBuilder(args).Build();
 
-        var host = builder.Build();
-        host.Run();
+        var ct = new CancellationToken();
+        await host.StartAsync(ct);
+
+        await host.WaitForShutdownAsync(ct);
+    }
+
+    public static IHostBuilder CreateHostBuilder(string[] args)
+    {
+        return Host.CreateDefaultBuilder(args)
+            .ConfigureServices(services => services.AddLogging())
+            .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
     }
 }
