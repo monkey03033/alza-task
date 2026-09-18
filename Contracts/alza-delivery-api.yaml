@@ -1,0 +1,48 @@
+openapi: 3.0.0
+info:
+  title: Alza Delivery API
+  version: 1.0.0
+paths:
+  /api/orders:
+    post:
+      summary: Create packages/orders, to mimic async communication
+      operationId: CreateOrder
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateOrderRequest'
+      responses:
+        '204':
+          description: Order processed successfully
+components:
+  schemas:
+    CreatePackageDto:
+      type: object
+      properties:
+        weight:
+          type: number
+          format: decimal
+          description: The weight of the product in kilograms
+        volume:
+          type: number
+          format: decimal
+          description: volume in cubic meters, height * width * depth 
+        revenue:
+          type: number
+          format: decimal
+          description: The revenue in CZK
+      required:
+        - weight
+        - volume
+        - revenue
+    CreateOrderRequest:
+      type: object
+      properties:
+        packages:
+          type: array
+          items:
+            $ref: '#/components/schemas/CreatePackageDto'
+      required:
+        - packages

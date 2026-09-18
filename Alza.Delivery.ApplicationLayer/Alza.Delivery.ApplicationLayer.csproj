@@ -8,6 +8,8 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Alza.Delivery.InfrastructureLayer\Alza.Delivery.InfrastructureLayer.csproj" />
+      <ProjectReference Include="..\Alza.Delivery.DomainLayer\Alza.Delivery.DomainLayer.csproj" />
+      <ProjectReference Include="..\Alza.Delivery.InterfaceLayer\Alza.Delivery.InterfaceLayer.csproj" />
     </ItemGroup>
 
 </Project>
